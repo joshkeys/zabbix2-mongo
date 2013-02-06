@@ -2,3 +2,31 @@ zabbix2-mongo
 =============
 
 Scripts and Deployment for Monitoring a Mongo Node with Zabbix 2.x
+
+zabbix_mongo_status.py is copied from serkan.capkan@gmail.com
+Modfied as necessar and packaged by Josh Keys jgkeys@gmail.com
+
+zabbix_mongo_status.py
+----------------------
+
+### NOTES
+- depends simplejson
+- start mongod with with --rest paramater
+
+### USAGE
+
+- zabbix_mongo_status.py serverStatus version
+- zabbix_mongo_status.py serverStatus globalLock lockTime
+
+fabfile.py
+----------
+
+### NOTES
+- Depends on fabric http://docs.fabfile.org/en/1.5/index.html  
+- Install with pip on your workstation to delpoy
+- For easy deploy into EC2 ssh-add your keys to your profile
+
+### USAGE
+
+- fab -H user@host1,user@host2,user@host3 deploy
+userparameter_mongo.conf and zabbix_mongo_status.py should be in the root of the directory of the fabfile.py
